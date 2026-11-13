@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080617">
+<title>Our Universe — Vishnupriya</title>
+<style>
+:root{--gold:#f5d7a0;--lav:#d9c3ff;--pink:#ffc5dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070612;color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer;color:#fff;border:1px solid #f5d7a088;background:#ffffff12;border-radius:999px;padding:14px 24px;letter-spacing:.12em;backdrop-filter:blur(8px);transition:.25s}
+button:hover{background:#f5d7a033;transform:translateY(-2px);box-shadow:0 0 28px #b68cff66}
+#intro{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;text-align:center;padding:30px 18px;background:radial-gradient(ellipse at 50% 45%,#26164c 0%,#0c0922 48%,#05040d 100%)}
+#stars,#stars:before,#stars:after{position:absolute;inset:0;content:"";pointer-events:none;background-image:radial-gradient(1px 1px at 12% 22%,#fff 99%,transparent),radial-gradient(2px 2px at 76% 18%,#fff 99%,transparent),radial-gradient(1px 1px at 38% 72%,#fff 99%,transparent),radial-gradient(1px 1px at 88% 81%,#fff 99%,transparent),radial-gradient(2px 2px at 55% 34%,#f6d9ff 99%,transparent);background-size:270px 240px;animation:twinkle 5s linear infinite}
+#stars:before{transform:translate(80px,30px);opacity:.5}#stars:after{transform:translate(-50px,80px);opacity:.35}
+@keyframes twinkle{50%{opacity:.45}}
+.intro-content{position:relative;z-index:2;width:min(900px,100%)}.eyebrow{font:11px Arial,sans-serif;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(3rem,10vw,7.5rem);font-weight:400;letter-spacing:.09em;margin:12px 0;background:linear-gradient(100deg,#fff,#e3caff,#f7d9ad);color:transparent;background-clip:text;text-shadow:0 0 55px #c39aff44}
+.subtitle{color:#e3d9f2;line-height:1.8;max-width:650px;margin:0 auto 22px}
+.solar{height:min(56vw,390px);min-height:240px;max-width:650px;margin:0 auto 8px;position:relative;display:grid;place-items:center}
+.sun{width:clamp(52px,10vw,88px);height:clamp(52px,10vw,88px);border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff6c9,#ffc35f 48%,#e76b3d 75%);box-shadow:0 0 35px #ffb44d,0 0 100px #ff8b4c88;z-index:2}
+.orbit{position:absolute;border:1px solid #d8c4ff38;border-radius:50%;width:var(--w);height:var(--h);animation:spin var(--speed) linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.planet{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:var(--s);height:var(--s);border-radius:50%;background:var(--c);box-shadow:0 0 20px var(--glow)}
+.planet:after{content:"";position:absolute;inset:25% 0;border-radius:50%;background:#fff2;filter:blur(4px)}
+.orbit:nth-child(2){--w:145px;--h:95px;--speed:9s;--s:10px;--c:#a6c9e9;--glow:#78aaff}
+.orbit:nth-child(3){--w:225px;--h:150px;--speed:14s;--s:15px;--c:#e5a66e;--glow:#ffb56b}
+.orbit:nth-child(4){--w:320px;--h:210px;--speed:20s;--s:20px;--c:#d88968;--glow:#e18d75}
+.orbit:nth-child(5){--w:430px;--h:285px;--speed:28s;--s:27px;--c:#d6b88b;--glow:#f1d3a0}
+.orbit:nth-child(6){--w:550px;--h:355px;--speed:36s;--s:31px;--c:#c4a7e9;--glow:#c9a3ff}
+#enter{margin-top:8px}
+#journey{display:none;position:fixed;inset:0;z-index:20;background:radial-gradient(ellipse at center,#1b1742,#05040d 75%);overflow:hidden;text-align:center}
+.journey-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+#planet-big{width:min(45vw,240px);aspect-ratio:1;border-radius:50%;margin:25px;background:radial-gradient(circle at 30% 28%,#fff9,#fff0 25%),linear-gradient(135deg,var(--planet-a),var(--planet-b));box-shadow:inset -25px -20px 45px #0008,0 0 65px var(--planet-glow);position:relative;animation:float 4s ease-in-out infinite}
+#planet-big:after{content:"";position:absolute;inset:35% -18%;border:9px solid #f5d7a099;border-left-color:#f5d7a022;border-right-color:#f5d7a022;border-radius:50%;transform:rotate(-18deg)}
+@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+#planet-name{font-size:clamp(2rem,7vw,4rem);font-weight:400;color:var(--gold);margin:4px}
+#planet-desc{max-width:580px;line-height:1.8;color:#ddd2ed}
+.journey-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+section.content{min-height:90vh;padding:90px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 45%,#25143b77,transparent 60%)}
+.kicker{font:11px Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#d6baff}
+h2{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:400;color:#f0dfff;margin:16px 0}
+p{max-width:720px;line-height:1.9;color:#ddd3e9}
+.panel{max-width:760px;border:1px solid #c8a7ff55;border-radius:24px;padding:30px;background:#171025dd;box-shadow:0 20px 70px #0006}
+.grid{width:min(1100px,100%);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px}
+figure{margin:0;padding:9px;border:1px solid #c8a7ff44;border-radius:17px;background:#ffffff0c}
+figure img{width:100%;height:260px;object-fit:cover;border-radius:11px;display:block}
+figcaption{font:12px Arial,sans-serif;color:#e3d2f5;padding:12px 4px 5px}
+.date{color:var(--gold);letter-spacing:.12em}
+#sorry{background:radial-gradient(ellipse at center,#481c4d77,transparent 65%)}
+footer{text-align:center;padding:30px;color:#9e91ad;font:10px Arial,sans-serif;letter-spacing:.2em}
+#music-note{font:11px Arial,sans-serif;color:#cbbbdc;margin-top:12px}
+@media(max-width:600px){.orbit:nth-child(5){--w:370px;--h:250px}.orbit:nth-child(6){--w:440px;--h:300px}figure img{height:230px}}
+</style>
+</head>
+<body>
+<div id="intro">
+ <div id="stars"></div>
+ <div class="intro-content">
+  <div class="eyebrow">A journey through the stars • made for one soul</div>
+  <div class="solar" aria-hidden="true"><div class="sun"></div><div class="orbit"><i class="planet"></i></div><div class="orbit"><i class="planet"></i></div><div class="orbit"><i class="planet"></i></div><div class="orbit"><i class="planet"></i></div><div class="orbit"><i class="planet"></i></div></div>
+  <div class="eyebrow">Somewhere in this endless universe</div>
+  <h1>OUR UNIVERSE</h1>
+  <p class="subtitle">Out of billions of stars, this little universe is made for you, Vishnupriya.</p>
+  <button id="enter" onclick="startJourney()">BEGIN OUR SPACE JOURNEY ✦</button>
+  <div id="music-note">♫ Add “Mia & Sebastian’s Theme.mp3” beside index.html for the soundtrack</div>
+ </div>
+</div>
+<div id="journey"><div class="journey-inner">
+ <div class="eyebrow">A little journey, just for us</div>
+ <div id="planet-big" style="--planet-a:#9cc7e9;--planet-b:#315b9a;--planet-glow:#639fff"></div>
+ <h2 id="planet-name">Mercury</h2><p id="planet-desc">Our journey begins with a tiny world, moving quietly through the vastness of space.</p>
+ <div class="journey-actions"><button onclick="prevPlanet()">← PREVIOUS</button><button onclick="nextPlanet()">NEXT PLANET →</button><button onclick="skipJourney()">ENTER OUR UNIVERSE ♡</button></div>
+</div></div>
+<audio id="bgm" loop><source src="Mia & Sebastian's Theme.mp3" type="audio/mpeg"></audio>
+<main id="main">
+<section class="content"><div class="kicker">You are my favourite destination</div><h2>Welcome, Vishnupriya</h2><p>Every planet has its own world. Every star has its own light. And somehow, you made my ordinary world feel like a whole universe.</p></section>
+<section class="content"><div class="kicker">Chapter one • our little constellations</div><h2>Our Memory Galaxy</h2><p>Twenty little windows into moments I want to keep close.</p>
+<div class="grid">
+<figure><img src="photos/1000104448.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000149120.png" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000149121.png" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000129621.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000146573.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000132268.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000129396.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000114686.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000101700.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000100809.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000042368.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000042361.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000053103.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000107997.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/7a34ff2c-9d16-45bd-b839-e8fb3bb3a0e6-1_all_4129.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000065773.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000065712.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000071530.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000078304.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+<figure><img src="photos/1000089247.jpg" loading="lazy"><figcaption>A moment to keep forever ✨</figcaption></figure>
+</div></section>
+<section class="content"><div class="kicker">Chapter two • where our orbit began</div><h2>Our Story</h2><div class="panel"><p class="date">MARCH 3, 2024</p><p>The first confession — the beginning of something unforgettable.</p><p class="date">MARCH 7, 2024</p><p>Our first call, and the day we both confessed. A date that became part of our universe.</p></div></section>
+<section class="content"><div class="kicker">Chapter three • a letter across the stars</div><h2>From my heart</h2><div class="panel"><p>Vishnupriya,</p><p>Some people make ordinary days feel special just by being in them. Thank you for the memories, the smiles, and all the little moments that mean more than words can say.</p><p>I'm grateful that our paths crossed. You will always have a special place in my universe.</p><p>With love, always. ♡</p></div></section>
+<section class="content"><div class="kicker">Chapter four • beyond the horizon</div><h2>Our little future</h2><div class="panel"><p>More conversations, more laughter, new places, little adventures, and countless ordinary days made special. The future is unwritten — and that is part of its magic.</p></div></section>
+<section class="content" id="sorry"><div class="kicker">The last little star</div><h2>One thing I want to say…</h2><div class="panel"><p>Vishnupriya, I'm sorry for the times I hurt you, disappointed you, or made you feel less loved than you deserve.</p><p>I know saying sorry is only the beginning. I want my actions, patience, and care to show you how much you mean to me.</p><p>I can't promise to be perfect, but I can promise to keep learning, listening, and trying to do better.</p><p><strong>I'm truly sorry. ❤️</strong></p><p>With love, always. ♡</p></div><p>In this endless universe, you will always be a star I treasure.</p></section>
+</main><footer>MADE WITH LOVE • OUR UNIVERSE • ✦</footer>
+<script>
+const planets=[
+{name:"Mercury",desc:"Small, swift, and full of wonder. Every beautiful journey begins with one little step.",a:"#c6c5c8",b:"#625d70",glow:"#b6b1d2"},
+{name:"Venus",desc:"A glowing world wrapped in warmth — like the way a simple smile can brighten everything.",a:"#ffe0a1",b:"#a75a42",glow:"#ffbd79"},
+{name:"Earth",desc:"Our home in the stars. A reminder that the most precious things are the little moments we share.",a:"#8de0e8",b:"#2454a5",glow:"#62cfff"},
+{name:"Mars",desc:"A brave red world — for every adventure, every challenge, and every memory still waiting for us.",a:"#ffb18a",b:"#8c2f32",glow:"#ff795d"},
+{name:"Jupiter",desc:"A giant among planets. Some feelings are just too big to fit into ordinary words.",a:"#f5c69b",b:"#95624b",glow:"#ffc28b"},
+{name:"Saturn",desc:"A world with rings, like the beautiful circles of memories that keep bringing me back to you.",a:"#f7dda2",b:"#99765c",glow:"#f5d7a0"},
+{name:"Uranus",desc:"Quiet, unusual, and wonderfully different — because every universe has its own magic.",a:"#c1f4f2",b:"#548f9e",glow:"#8ce8ee"},
+{name:"Neptune",desc:"At the edge of our journey, the universe still feels endless. And there are so many memories yet to make.",a:"#9bbaff",b:"#253d9b",glow:"#7298ff"}
+];let pi=0;
+function showPlanet(){let p=planets[pi],el=document.getElementById('planet-big');document.getElementById('planet-name').textContent=p.name;document.getElementById('planet-desc').textContent=p.desc;el.style.setProperty('--planet-a',p.a);el.style.setProperty('--planet-b',p.b);el.style.setProperty('--planet-glow',p.glow)}
+function startJourney(){document.getElementById('journey').style.display='block';showPlanet();let a=document.getElementById('bgm');a.volume=.55;a.play().catch(()=>{});}
+function nextPlanet(){if(pi<planets.length-1){pi++;showPlanet()}else{skipJourney()}}
+function prevPlanet(){pi=(pi+planets.length-1)%planets.length;showPlanet()}
+function skipJourney(){document.getElementById('journey').style.display='none';document.getElementById('main').scrollIntoView({behavior:'smooth'})}
+</script>
+</body></html>
